@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лендінги для бізнесу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script>
+/* ================================================================
+   CONFIG — ВСЕ ЩО ЗМІНЮЄТЬСЯ, ЗІБРАНО ТУТ
+   Шукайте коментар /* ЗМІНИТИ * / поруч із кожним параметром
+================================================================ */
+var CONFIG = {
+
+  /* --- КОЛЬОРИ --- */
+  colors: {
+    bg:           "#EDE8DF",   /* ЗМІНИТИ: фон усього сайту */
+    bgCard:       "#E5DFD4",   /* ЗМІНИТИ: фон карток */
+    bgDark:       "#2C2B28",   /* ЗМІНИТИ: фон темних секцій */
+    text:         "#1E1D1A",   /* ЗМІНИТИ: основний колір тексту */
+    textMuted:    "#7A7166",   /* ЗМІНИТИ: приглушений текст */
+    textLight:    "#C8C0B0",   /* ЗМІНИТИ: текст на темному тлі */
+    accent:       "#5C6B4A",   /* ЗМІНИТИ: акцентний колір (зелений чорнила) */
+    accentLight:  "#8A9B76",   /* ЗМІНИТИ: світліший акцент */
+    border:       "#D4CEC3",   /* ЗМІНИТИ: колір ліній та рамок */
+    borderDark:   "rgba(255,255,255,0.10)", /* ЗМІНИТИ: рамки на темному */
+  },
+
+  /* --- КОНТАКТИ --- */
+  telegram:    "your_telegram",          /* ЗМІНИТИ: username Telegram без @ */
+  whatsapp:    "380XXXXXXXXX",           /* ЗМІНИТИ: номер у форматі 380XXXXXXXXX */
+  email:       "your@email.com",         /* ЗМІНИТИ: ваша електронна пошта */
+
+  /* --- НАВІГАЦІЯ --- */
+  logoName:    "[Ваше ім'я]",            /* ЗМІНИТИ: ваше ім'я або назва студії */
+  logoSub:     "Лендінги для бізнесу",   /* ЗМІНИТИ: підпис під логотипом */
+  navCta:      "Написати",              /* ЗМІНИТИ: текст кнопки в навігації */
+
+  /* --- СЕКЦІЯ HERO --- */
+  heroTag:     "Портфоліо",             /* ЗМІНИТИ: мітка зверху */
+  heroLine1:   "Сайт, який",            /* ЗМІНИТИ: 1-й рядок заголовку */
+  heroLine2:   "працює замість",        /* ЗМІНИТИ: 2-й рядок заголовку */
+  heroLine3:   "відділу продажів",      /* ЗМІНИТИ: 3-й рядок (акцентний) */
+  heroText:    "Створюю лендінги для українських локальних бізнесів. Без зайвого — лише те, що конвертує відвідувача у замовника.", /* ЗМІНИТИ */
+  heroBtnPrimary:  "Переглянути роботи",  /* ЗМІНИТИ */
+  heroBtnSecondary:"Написати в Telegram", /* ЗМІНИТИ */
+
+  /* --- СЕКЦІЯ ПРОБЛЕМА / РІШЕННЯ --- */
+  problemTag:   "Навіщо лендінг",       /* ЗМІНИТИ */
+  problemTitle: "Бізнес є. Замовників бракує.",  /* ЗМІНИТИ */
+  problemItems: [
+    {
+      num:   "01",
+      title: "Instagram — не сайт",
+      text:  "Профіль у соцмережах не дає довіри. Замовник шукає сайт — і йде до конкурента, у якого він є."
+    },
+    {
+      num:   "02",
+      title: "Складний сайт — порожній сайт",
+      text:  "Багатосторінковий сайт дорогий і важкий. Лендінг — це одна сторінка з чіткою відповіддю на питання замовника."
+    },
+    {
+      num:   "03",
+      title: "Перше враження — одне",
+      text:  "У вас 5 секунд. Або сайт одразу пояснює що ви робите і чому варто обрати вас — або замовник закриває вкладку."
+    }
+  ],
+
+  /* --- СЕКЦІЯ НІШІ --- */
+  nichesTag:   "Напрямки",             /* ЗМІНИТИ */
+  nichesTitle: "Роботи по нішах",      /* ЗМІНИТИ */
+  nichesNote:  "Демо-роботи. Натисніть на картку — переглянете приклад.", /* ЗМІНИТИ */
+  niches: [
+    /* abbr — 2 літери для іконки (без емодзі!)
+       label — назва ніші
+       desc  — підзаголовок
+       link  — посилання на демо (або "#" якщо ще немає) */
+    { abbr: "JK", label: "Доставка їжі",          desc: "Японська кухня, суші, роли",         link: "#" },
+    { abbr: "EK", label: "Клінінг",               desc: "Еко-прибирання квартир та офісів",   link: "#" },
+    { abbr: "E1", label: "Електрик 24/7",          desc: "Виклик майстра, термінові роботи",   link: "#" },
+    { abbr: "EP", label: "Електрика під ключ",     desc: "Проєкт, монтаж, здача",              link: "#" },
+    { abbr: "EB", label: "Електрика для бізнесу",  desc: "Офіси, магазини, виробництво",       link: "#" },
+    { abbr: "GN", label: "Генератори",             desc: "Резервне живлення, монтаж",           link: "#" },
+    { abbr: "BM", label: "Будівництво",            desc: "Монтажні роботи на об'єктах",         link: "#" },
+    { abbr: "SN", label: "Сантехніка",             desc: "Ремонт і монтаж під ключ",            link: "#" },
+    { abbr: "KR", label: "Краса та догляд",        desc: "Салони, перукарні, майстри",          link: "#" },
+    { abbr: "MD", label: "Медицина",               desc: "Стоматологія, клініки, лікарі",       link: "#" },
+    { abbr: "KF", label: "Кафе та ресторани",      desc: "Меню, атмосфера, бронювання",         link: "#" },
+    { abbr: "+",  label: "Ваша ніша",              desc: "Запишіться на консультацію",          link: "#contact" }
+  ],
+
+  /* --- СЕКЦІЯ ЯК ЦЕ ПРАЦЮЄ --- */
+  howTag:   "Процес",                  /* ЗМІНИТИ */
+  howTitle: "Як ми працюємо",          /* ЗМІНИТИ */
+  steps: [
+    { num: "01", title: "Консультація",  text: "Коротка розмова або переписка. Дізнаюсь про ваш бізнес, аудиторію та мету сайту." },
+    { num: "02", title: "Розробка",      text: "Верстаю лендінг. Ви бачите прогрес на кожному етапі та вносите правки." },
+    { num: "03", title: "Запуск",        text: "Передаю готовий сайт із інструкцією та підтримкою після здачі." }
+  ],
+
+  /* --- СЕКЦІЯ CTA / КОНТАКТ --- */
+  ctaTag:    "Зв'язок",               /* ЗМІНИТИ */
+  ctaTitle:  "Маєте проєкт?",         /* ЗМІНИТИ */
+  ctaText:   "Напишіть — і ми обговоримо, яким має бути ваш сайт. Без зобов'язань.", /* ЗМІНИТИ */
+  ctaBtnTg:  "Telegram",              /* ЗМІНИТИ */
+  ctaBtnWa:  "WhatsApp",              /* ЗМІНИТИ */
+  ctaBtnMail:"Email",                 /* ЗМІНИТИ */
+
+  /* --- ФУТЕР --- */
+  footerText: "Лендінги для локального бізнесу"  /* ЗМІНИТИ */
+};
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #EDE8DF;
+  --bg-card:     #E5DFD4;
+  --bg-dark:     #2C2B28;
+  --text:        #1E1D1A;
+  --muted:       #7A7166;
+  --light:       #C8C0B0;
+  --accent:      #5C6B4A;
+  --accent-l:    #8A9B76;
+  --border:      #D4CEC3;
+  --border-dark: rgba(255,255,255,0.10);
+  --r: 12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(237,232,223,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  animation: fadedown 0.7s ease 0.1s forwards;
+}
+
+.nav-logo { text-decoration: none; }
+.nav-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--text); letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+.nav-logo-sub {
+  font-size: 0.65rem; font-weight: 300;
+  color: var(--muted); letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-link {
+  font-size: 0.82rem; font-weight: 400;
+  color: var(--muted); text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--text); }
+
+.nav-btn {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  color: var(--bg) !important;
+  background: var(--accent) !important;
+  border: none !important;
+  padding: 0.55rem 1.35rem !important;
+  border-radius: 100px !important;
+  text-decoration: none !important;
+  transition: background 0.2s, transform 0.15s !important;
+  cursor: pointer !important;
+}
+.nav-btn:hover { background: var(--accent-l) !important; transform: scale(1.03) !important; }
+
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--text); transition: all 0.3s;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 8rem 3rem 4rem;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(92,107,74,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-left { position: relative; z-index: 2; }
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.3rem 0.85rem; border-radius: 100px;
+  margin-bottom: 2.5rem;
+  opacity: 0; transform: translateY(10px);
+  animation: fadeup 0.6s ease 0.3s forwards;
+}
+
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 600; line-height: 1.02;
+  letter-spacing: -0.01em;
+  opacity: 0; transform: translateY(20px);
+  animation: fadeup 0.75s ease 0.45s forwards;
+}
+
+.hero-h1 em {
+  font-style: italic; color: var(--accent);
+}
+
+.hero-text {
+  margin-top: 2rem; max-width: 440px;
+  font-size: 1rem; font-weight: 300;
+  color: var(--muted); line-height: 1.75;
+  opacity: 0; transform: translateY(14px);
+  animation: fadeup 0.7s ease 0.65s forwards;
+}
+
+.hero-btns {
+  margin-top: 2.5rem;
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeup 0.7s ease 0.8s forwards;
+}
+
+.btn-primary {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.88rem !important; font-weight: 500 !important;
+  color: var(--bg) !important; background: var(--text) !important;
+  padding: 0.8rem 2rem !important; border-radius: 100px !important;
+  text-decoration: none !important; border: none !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.btn-primary:hover { background: var(--accent) !important; transform: scale(1.02) !important; }
+
+.btn-secondary {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.88rem !important; font-weight: 400 !important;
+  color: var(--text) !important; background: transparent !important;
+  padding: 0.8rem 2rem !important; border-radius: 100px !important;
+  border: 1px solid var(--border) !important; text-decoration: none !important;
+  transition: border-color 0.2s, transform 0.15s !important;
+}
+.btn-secondary:hover { border-color: var(--text) !important; transform: scale(1.02) !important; }
+
+.hero-right {
+  position: relative; z-index: 2;
+  opacity: 0;
+  animation: fadein 1s ease 0.9s forwards;
+}
+
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 2rem;
+}
+
+.hero-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-weight: 600;
+  color: var(--muted); letter-spacing: 0.05em;
+  text-transform: uppercase; margin-bottom: 1.5rem;
+}
+
+.hero-stat-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.hero-stat {
+  display: flex; align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+.hero-stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 300; }
+.hero-stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 600;
+  color: var(--text);
+}
+
+/* ── SECTIONS COMMON ── */
+.section { padding: 6rem 3rem; }
+.section-label {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.25rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 600; line-height: 1.1;
+  letter-spacing: -0.01em; margin-bottom: 3rem;
+}
+
+/* ── PROBLEM ── */
+.problem { background: var(--bg-dark); color: #F0EBE0; }
+.problem .section-label { color: var(--accent-l); }
+.problem .section-title { color: #F0EBE0; }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.problem-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--r);
+  padding: 2rem;
+  opacity: 0; transform: translateY(20px);
+  transition: border-color 0.25s;
+}
+.problem-card.visible { animation: fadeup 0.6s ease forwards; }
+.problem-card:hover { border-color: rgba(255,255,255,0.2); }
+.problem-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 400; font-style: italic;
+  color: rgba(255,255,255,0.12); line-height: 1;
+  margin-bottom: 1rem;
+}
+.problem-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 600;
+  color: #F0EBE0; margin-bottom: 0.6rem;
+}
+.problem-text { font-size: 0.88rem; color: var(--light); line-height: 1.7; font-weight: 300; }
+
+/* ── NICHES ── */
+.niches-note { font-size: 0.82rem; color: var(--muted); margin-bottom: 2.5rem; margin-top: -2rem; font-style: italic; }
+.niches-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.niche-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 1.5rem;
+  text-decoration: none; color: inherit;
+  display: block;
+  opacity: 0; transform: translateY(16px);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.niche-card.visible { animation: fadeup 0.5s ease forwards; }
+.niche-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(30,29,26,0.08);
+  border-color: var(--accent-l);
+}
+.niche-abbr {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 600; font-style: italic;
+  color: var(--accent);
+  display: block; margin-bottom: 0.75rem;
+}
+.niche-label {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--text); margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+.niche-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+.niche-card.niche-cta {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.niche-card.niche-cta .niche-abbr { color: rgba(255,255,255,0.6); }
+.niche-card.niche-cta .niche-label { color: #fff; }
+.niche-card.niche-cta .niche-desc { color: rgba(255,255,255,0.7); }
+.niche-card.niche-cta:hover { border-color: var(--accent-l); background: var(--accent-l); }
+
+/* ── HOW ── */
+.how { background: var(--bg-dark); color: #F0EBE0; }
+.how .section-label { color: var(--accent-l); }
+.how .section-title { color: #F0EBE0; }
+.steps-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0;
+}
+.step {
+  padding: 2.5rem 2rem 2.5rem 0;
+  border-right: 1px solid var(--border-dark);
+  padding-right: 2.5rem;
+  opacity: 0; transform: translateY(16px);
+}
+.step:first-child { padding-left: 0; }
+.step:last-child { border-right: none; }
+.step.visible { animation: fadeup 0.6s ease forwards; }
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 400; font-style: italic;
+  color: rgba(255,255,255,0.10); line-height: 1; margin-bottom: 1.25rem;
+}
+.step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600;
+  color: #F0EBE0; margin-bottom: 0.65rem;
+}
+.step-text { font-size: 0.88rem; color: var(--light); line-height: 1.7; font-weight: 300; }
+
+/* ── CTA ── */
+.cta-section { padding: 7rem 3rem; }
+.cta-inner {
+  max-width: 700px; margin: 0 auto;
+  text-align: center;
+}
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 600; line-height: 1.05;
+  letter-spacing: -0.01em; margin-bottom: 1.25rem;
+}
+.cta-title em { font-style: italic; color: var(--accent); }
+.cta-text { font-size: 1rem; color: var(--muted); line-height: 1.7; margin-bottom: 3rem; font-weight: 300; }
+.cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+.btn-tg {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem !important; font-weight: 500 !important;
+  color: var(--bg) !important; background: var(--accent) !important;
+  padding: 0.85rem 1.75rem !important; border-radius: 100px !important;
+  text-decoration: none !important; border: none !important;
+  display: inline-flex !important; align-items: center !important;
+  gap: 0.5rem !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.btn-tg:hover { background: var(--accent-l) !important; transform: scale(1.03) !important; }
+
+.btn-wa {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem !important; font-weight: 400 !important;
+  color: var(--text) !important; background: transparent !important;
+  padding: 0.85rem 1.75rem !important; border-radius: 100px !important;
+  border: 1px solid var(--border) !important; text-decoration: none !important;
+  display: inline-flex !important; align-items: center !important;
+  gap: 0.5rem !important;
+  transition: border-color 0.2s, transform 0.15s !important;
+}
+.btn-wa:hover { border-color: var(--text) !important; transform: scale(1.03) !important; }
+
+.btn-mail {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem !important; font-weight: 400 !important;
+  color: var(--muted) !important; background: transparent !important;
+  padding: 0.85rem 1.5rem !important; border-radius: 100px !important;
+  border: 1px solid var(--border) !important; text-decoration: none !important;
+  display: inline-flex !important; align-items: center !important;
+  gap: 0.5rem !important;
+  transition: color 0.2s, border-color 0.2s, transform 0.15s !important;
+}
+.btn-mail:hover { color: var(--text) !important; border-color: var(--text) !important; transform: scale(1.03) !important; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-dark);
+  padding: 2rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem; font-weight: 600;
+  color: #F0EBE0 !important; text-decoration: none !important;
+}
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+/* ── DIVIDER LINE ── */
+.hr-line { height: 1px; background: var(--border); margin: 0 3rem; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeup   { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadedown { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadein   { to { opacity: 1; } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 2rem 3rem; }
+  .hero-right { display: none; }
+  .steps-row { grid-template-columns: 1fr; }
+  .step { border-right: none; border-bottom: 1px solid var(--border-dark); padding: 2rem 0; }
+  .step:last-child { border-bottom: none; }
+}
+
+@media (max-width: 640px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links .nav-link { display: none; }
+  .section, .cta-section { padding: 4rem 1.5rem; }
+  .hero { padding: 6rem 1.5rem 3rem; }
+  footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+  .hr-line { margin: 0 1.5rem; }
+  .hero-btns { flex-direction: column; }
+  .cta-btns { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo" id="nav-logo">
+    <div class="nav-logo-name" id="nav-logo-name"></div>
+    <div class="nav-logo-sub" id="nav-logo-sub"></div>
+  </a>
+  <div class="nav-links">
+    <a href="#niches" class="nav-link">Роботи</a>
+    <a href="#how" class="nav-link">Процес</a>
+    <a href="#contact" class="nav-link">Контакт</a>
+    <a class="nav-btn" id="nav-cta" href="#">Написати</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag" id="hero-tag"></div>
+    <h1 class="hero-h1" id="hero-h1"></h1>
+    <p class="hero-text" id="hero-text"></p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#niches" id="hero-btn-primary"></a>
+      <a class="btn-secondary" id="hero-btn-secondary" href="#"></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-title">Що ви отримуєте</div>
+      <div class="hero-stat-list">
+        <div class="hero-stat">
+          <span class="hero-stat-label">Тип роботи</span>
+          <span class="hero-stat-value">Лендінг</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Час розробки</span>
+          <span class="hero-stat-value">7–14 днів</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Адаптив</span>
+          <span class="hero-stat-value">Так</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Правки</span>
+          <span class="hero-stat-value">Включено</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Підтримка після</span>
+          <span class="hero-stat-value">Є</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr-line"></div>
+
+<!-- PROBLEM -->
+<section class="section problem" id="problem">
+  <div class="section-label" id="problem-tag"></div>
+  <h2 class="section-title" id="problem-title"></h2>
+  <div class="problem-grid" id="problem-grid"></div>
+</section>
+
+<!-- NICHES -->
+<section class="section" id="niches">
+  <div class="section-label" id="niches-tag"></div>
+  <h2 class="section-title" id="niches-title"></h2>
+  <p class="niches-note" id="niches-note"></p>
+  <div class="niches-grid" id="niches-grid"></div>
+</section>
+
+<!-- HOW -->
+<section class="section how" id="how">
+  <div class="section-label" id="how-tag"></div>
+  <h2 class="section-title" id="how-title"></h2>
+  <div class="steps-row" id="steps-row"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" id="cta-tag"></div>
+    <h2 class="cta-title" id="cta-title"></h2>
+    <p class="cta-text" id="cta-text"></p>
+    <div class="cta-btns">
+      <a class="btn-tg" id="btn-tg" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <span id="cta-btn-tg"></span>
+      </a>
+      <a class="btn-wa" id="btn-wa" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        <span id="cta-btn-wa"></span>
+      </a>
+      <a class="btn-mail" id="btn-mail" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span id="cta-btn-mail"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo" id="footer-logo"></a>
+  <span class="footer-copy" id="footer-copy"></span>
+</footer>
+
+<script>
+(function() {
+  // Кольори з CONFIG
+  var c = CONFIG.colors;
+  var root = document.documentElement;
+  root.style.setProperty('--bg',          c.bg);
+  root.style.setProperty('--bg-card',     c.bgCard);
+  root.style.setProperty('--bg-dark',     c.bgDark);
+  root.style.setProperty('--text',        c.text);
+  root.style.setProperty('--muted',       c.textMuted);
+  root.style.setProperty('--light',       c.textLight);
+  root.style.setProperty('--accent',      c.accent);
+  root.style.setProperty('--accent-l',    c.accentLight);
+  root.style.setProperty('--border',      c.border);
+  root.style.setProperty('--border-dark', c.borderDark);
+
+  var tgLink   = "https://t.me/" + CONFIG.telegram;
+  var waLink   = "https://wa.me/" + CONFIG.whatsapp;
+  var mailLink = "mailto:" + CONFIG.email;
+
+  // NAV
+  document.getElementById('nav-logo-name').textContent = CONFIG.logoName;
+  document.getElementById('nav-logo-sub').textContent  = CONFIG.logoSub;
+  document.getElementById('nav-cta').textContent       = CONFIG.navCta;
+  document.getElementById('nav-cta').href              = tgLink;
+
+  // HERO
+  document.getElementById('hero-tag').textContent         = CONFIG.heroTag;
+  document.getElementById('hero-text').textContent        = CONFIG.heroText;
+  document.getElementById('hero-btn-primary').textContent = CONFIG.heroBtnPrimary;
+  document.getElementById('hero-btn-secondary').textContent = CONFIG.heroBtnSecondary;
+  document.getElementById('hero-btn-secondary').href      = tgLink;
+
+  var h1 = document.getElementById('hero-h1');
+  h1.innerHTML =
+    CONFIG.heroLine1 + '<br>' +
+    CONFIG.heroLine2 + '<br>' +
+    '<em>' + CONFIG.heroLine3 + '</em>';
+
+  // PROBLEM
+  document.getElementById('problem-tag').textContent   = CONFIG.problemTag;
+  document.getElementById('problem-title').textContent = CONFIG.problemTitle;
+  var pg = document.getElementById('problem-grid');
+  CONFIG.problemItems.forEach(function(p, i) {
+    var el = document.createElement('div');
+    el.className = 'problem-card';
+    el.setAttribute('data-delay', i * 0.12);
+    el.innerHTML =
+      '<div class="problem-num">' + p.num + '</div>' +
+      '<div class="problem-title">' + p.title + '</div>' +
+      '<p class="problem-text">' + p.text + '</p>';
+    pg.appendChild(el);
+  });
+
+  // NICHES
+  document.getElementById('niches-tag').textContent   = CONFIG.nichesTag;
+  document.getElementById('niches-title').textContent = CONFIG.nichesTitle;
+  document.getElementById('niches-note').textContent  = CONFIG.nichesNote;
+  var ng = document.getElementById('niches-grid');
+  CONFIG.niches.forEach(function(n, i) {
+    var isLast = i === CONFIG.niches.length - 1;
+    var el = document.createElement('a');
+    el.className = 'niche-card' + (isLast ? ' niche-cta' : '');
+    el.href = n.link || '#contact';
+    if (n.link && n.link !== '#' && n.link !== '#contact') el.target = '_blank';
+    el.setAttribute('data-delay', i * 0.06);
+    el.innerHTML =
+      '<span class="niche-abbr">' + n.abbr + '</span>' +
+      '<div class="niche-label">' + n.label + '</div>' +
+      '<div class="niche-desc">' + n.desc + '</div>';
+    ng.appendChild(el);
+  });
+
+  // HOW
+  document.getElementById('how-tag').textContent   = CONFIG.howTag;
+  document.getElementById('how-title').textContent = CONFIG.howTitle;
+  var sr = document.getElementById('steps-row');
+  CONFIG.steps.forEach(function(s, i) {
+    var el = document.createElement('div');
+    el.className = 'step';
+    el.setAttribute('data-delay', i * 0.15);
+    el.innerHTML =
+      '<div class="step-num">' + s.num + '</div>' +
+      '<div class="step-title">' + s.title + '</div>' +
+      '<p class="step-text">' + s.text + '</p>';
+    sr.appendChild(el);
+  });
+
+  // CTA
+  document.getElementById('cta-tag').textContent     = CONFIG.ctaTag;
+  document.getElementById('cta-text').textContent    = CONFIG.ctaText;
+  document.getElementById('cta-btn-tg').textContent  = CONFIG.ctaBtnTg;
+  document.getElementById('cta-btn-wa').textContent  = CONFIG.ctaBtnWa;
+  document.getElementById('cta-btn-mail').textContent= CONFIG.ctaBtnMail;
+
+  var ctaTitle = document.getElementById('cta-title');
+  ctaTitle.innerHTML = CONFIG.ctaTitle.replace(/(Маєте)/, '<em>$1</em>');
+
+  document.getElementById('btn-tg').href   = tgLink;
+  document.getElementById('btn-wa').href   = waLink;
+  document.getElementById('btn-mail').href = mailLink;
+
+  // FOOTER
+  document.getElementById('footer-logo').textContent = CONFIG.logoName + ' \u00B7 ' + CONFIG.logoSub;
+  document.getElementById('footer-copy').textContent =
+    '\u00A9 ' + new Date().getFullYear() + ' \u00B7 ' + CONFIG.footerText;
+
+  // SCROLL ANIMATIONS
+  if (window.IntersectionObserver) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var delay = parseFloat(e.target.getAttribute('data-delay') || 0);
+          e.target.style.animationDelay = delay + 's';
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.problem-card, .niche-card, .step').forEach(function(el) {
+      obs.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.problem-card, .niche-card, .step').forEach(function(el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+})();
+</script>
+</body>
+</html>
